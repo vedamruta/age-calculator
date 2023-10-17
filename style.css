@@ -1,0 +1,152 @@
+:root {
+    --purple: hsl(259, 100%, 65%);
+    --light-red: hsl(0, 100%, 67%);
+    --white: hsl(0, 0%, 100%);
+    --smokey-grey: hsl(0, 1%, 44%);
+    --light-grey: hsl(0, 0%, 86%);
+    --off-black: hsl(0, 0%, 8%);
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    box-sizing: border-box;
+    background-color: var(--light-grey);
+    font-family: poppins;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .main-div {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    background-color: var(--white);
+    /* border: 2px solid red; */
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-radius: 5% 5% 25% 5%;
+  }
+  
+  .input-containers {
+    margin: 2rem 2rem 0 2rem;
+    padding-bottom: 2em; 
+    /* border: 2px solid yellow; */
+    border-bottom: 2px solid var(--light-grey);
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+    font-family: poppins;
+    color: var(--smokey-grey);
+  }
+
+  input {
+    color: var(--off-black);
+    border: 2px solid var(--light-grey);
+    font-size: 32px;
+    width: 35%;
+  }
+
+  input::placeholder {
+    font-size: 32px;
+    font-weight: bold;
+    padding: 2em 0.1em;
+    color: var(--smokey-grey);
+    opacity: 0.7;
+  }
+
+  #year {
+    width: 60%;
+  }
+
+  .break {
+    display: flex;
+    flex-direction: row-reverse;
+    margin-top: -30px;
+  }
+
+  .purple {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: var(--purple);
+    cursor: pointer;
+  }
+
+  .purple svg {
+    margin: 7px;
+  }
+
+  .output-containers {
+    margin-left: 2rem;
+    /* border: 2px solid green; */
+    display: flex;
+    flex-direction: column;
+    color: var(--off-black);
+    font-size: 3rem;
+    font-style: italic;
+    font-weight: bolder;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  .year_error, .month_error, .day_error {
+    font-size: large;
+    color: var(--light-red);
+  }
+
+  span {
+    color: var(--purple);
+  }
+
+  .attribution { font-size: 11px; text-align: center; }
+  .attribution a { color: hsl(228, 45%, 44%); }
+
+@media screen and (max-width: 800px) {
+    .main-div {
+        width: 70%;
+    }
+    
+      .main-div {
+        display: flex;
+        flex-direction: column;
+        /* width: 70%; */
+        background-color: var(--white);
+        /* border: 2px solid red; */
+        margin-bottom: 1rem;
+        padding-bottom: 1rem;
+        border-radius: 5% 5% 25% 5%;
+      }
+      
+      .input-containers {
+        margin: 1rem 1rem 0 1rem;
+        display: flex;
+        flex-direction: row;
+        gap: 0.5em;
+      }
+    
+      input {
+        font-size: 15px;
+      }
+
+      input::placeholder {
+        font-size: 15px;
+      }
+    
+      .purple {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background-color: var(--purple);
+        cursor: pointer;
+      }
+
+      .output-containers p {
+        font-size: 1.8rem;
+      }
+}
