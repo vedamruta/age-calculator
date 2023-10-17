@@ -102,18 +102,25 @@ day_input.addEventListener("input", (event) => {
 });
 
 function calculate_result() {
-    const currentDate = new Date();
-    const day = currentDate.getDate();
-    const month = currentDate.getMonth() + 1;
-    const year = currentDate.getFullYear();
-    console.log(currentDate);
-    console.log(day);
-    console.log(month);
-    console.log(year);
+    // Get the user's input for day, month, and year
+    const day = parseInt(day_input.value);
+    const month = parseInt(month_input.value) - 1; // Months are zero-indexed
+    const year = parseInt(year_input.value);
 
-    let year_diff = Math.abs(year - year_input.value);
-    let month_diff = Math.abs(month - month_input.value);
-    let day_diff = Math.abs(day - day_input.value);
+    // Get the current date
+    const currentDate = new Date();
+
+    // Create a Date object for the birthdate
+    const birthDate = new Date(year, month, day);
+
+    // Calculate the age in milliseconds
+    const ageInMilliseconds = currentDate - birthDate;
+
+    // Convert the age to years, months, and days
+    const ageDate = new Date(ageInMilliseconds);
+    const year_diff = ageDate.getUTCFullYear() - 1970;
+    const month_diff = ageDate.getUTCMonth();
+    const day_diff = ageDate.getUTCDate() - 1;
     
     years_output.textContent = year_diff;
     months_output.textContent = month_diff;
